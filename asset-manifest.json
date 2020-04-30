@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Galerija/static/css/main.c1c01b48.chunk.css",
+    "main.js": "/Galerija/static/js/main.f79b3ed1.chunk.js",
+    "main.js.map": "/Galerija/static/js/main.f79b3ed1.chunk.js.map",
+    "runtime-main.js": "/Galerija/static/js/runtime-main.e91e8367.js",
+    "runtime-main.js.map": "/Galerija/static/js/runtime-main.e91e8367.js.map",
+    "static/js/2.a6086c47.chunk.js": "/Galerija/static/js/2.a6086c47.chunk.js",
+    "static/js/2.a6086c47.chunk.js.map": "/Galerija/static/js/2.a6086c47.chunk.js.map",
+    "index.html": "/Galerija/index.html",
+    "precache-manifest.85aec112b4162ab4df60d9eb3ee2d1a6.js": "/Galerija/precache-manifest.85aec112b4162ab4df60d9eb3ee2d1a6.js",
+    "service-worker.js": "/Galerija/service-worker.js",
+    "static/css/main.c1c01b48.chunk.css.map": "/Galerija/static/css/main.c1c01b48.chunk.css.map",
+    "static/js/2.a6086c47.chunk.js.LICENSE.txt": "/Galerija/static/js/2.a6086c47.chunk.js.LICENSE.txt",
+    "static/media/styles.css": "/Galerija/static/media/peristil.d6d52a98.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e91e8367.js",
+    "static/js/2.a6086c47.chunk.js",
+    "static/css/main.c1c01b48.chunk.css",
+    "static/js/main.f79b3ed1.chunk.js"
+  ]
+}
