@@ -1,9 +1,9 @@
-export const canvasSetup = () => {
+export const canvasSetup = (width, height) => {
   const canvas = document.getElementsByTagName("canvas")[0];
   const ctx = canvas.getContext("2d");
 
-  canvas.width = 800;
-  canvas.height = 466;
+  canvas.width = width;
+  canvas.height = height;
 
   let painting = false;
 
@@ -20,10 +20,13 @@ export const canvasSetup = () => {
   function draw(e) {
     if (!painting || e.which !== 1) return;
 
-    ctx.lineTo(e.clientX, e.clientY);
+    const positionCorrection =
+      (window.innerWidth - (window.innerHeight * 4) / 3) / 2;
+
+    ctx.lineTo(e.clientX - positionCorrection, e.clientY);
     ctx.stroke();
     ctx.beginPath();
-    ctx.moveTo(e.clientX, e.clientY);
+    ctx.moveTo(e.clientX - positionCorrection, e.clientY);
   }
 
   canvas.addEventListener("mousedown", startPosition);
