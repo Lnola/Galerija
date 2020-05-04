@@ -20,13 +20,21 @@ export const canvasSetup = (width, height) => {
   function draw(e) {
     if (!painting || e.which !== 1) return;
 
-    const positionCorrection =
-      (window.innerWidth - (window.innerHeight * 4) / 3) / 2;
+    const canvasBoundingClientRect = canvas.getBoundingClientRect();
 
-    ctx.lineTo(e.clientX - positionCorrection, e.clientY);
+    const positionCorrectionX = canvasBoundingClientRect.left;
+    const positionCorrectionY = canvasBoundingClientRect.top;
+
+    ctx.lineTo(
+      e.clientX - positionCorrectionX,
+      e.clientY - positionCorrectionY
+    );
     ctx.stroke();
     ctx.beginPath();
-    ctx.moveTo(e.clientX - positionCorrection, e.clientY);
+    ctx.moveTo(
+      e.clientX - positionCorrectionX,
+      e.clientY - positionCorrectionY
+    );
   }
 
   canvas.addEventListener("mousedown", startPosition);

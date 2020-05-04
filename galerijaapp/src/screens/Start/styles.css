@@ -1,0 +1,24 @@
+.purple-circle,
+.green-circle,
+.red-arrow {
+  position: absolute;
+}
+
+.purple-circle {
+  top: 5%;
+  left: 0;
+}
+
+.green-circle {
+  top: 30%;
+  right: 0;
+}
+
+.red-arrow {
+  top: 33%;
+  left: 8%;
+}
+
+.start-canvas {
+  margin: 5% 0 2% 3%;
+}

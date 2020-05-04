@@ -5,14 +5,14 @@ import { canvasSetup } from "../../utils/canvasSetup";
 import { strokeSetup } from "../../utils/strokeSetup";
 import { FlexSection } from "../styled/Flex";
 
-const Canvas = () => {
-  const [color, setColor] = useState("#ffffff");
+const Canvas = ({ width, height }) => {
+  const [color, setColor] = useState("#000");
   const [brushWidth, setBrushWidth] = useState("8");
   const [isStrokeVisible, setIsStrokeVisible] = useState(false);
 
   useEffect(() => {
-    canvasSetup(800, 466);
-  }, []);
+    canvasSetup(width, height);
+  }, [width, height]);
 
   useEffect(() => {
     strokeSetup(color, brushWidth);
@@ -21,7 +21,7 @@ const Canvas = () => {
   return (
     <FlexSection>
       <canvas />
-      <FlexSection direction="column" margin="5px 0 0 5px">
+      <FlexSection direction="column" margin="5px 0 0 5px" position="relative">
         <span
           className="arrow"
           onClick={() => setIsStrokeVisible(!isStrokeVisible)}
@@ -30,7 +30,7 @@ const Canvas = () => {
         </span>
 
         {isStrokeVisible && (
-          <FlexSection direction="column">
+          <FlexSection className="canvas-picker" direction="column">
             <input
               className="brush-width"
               type="number"

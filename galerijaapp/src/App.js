@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
+import Start from "./screens/Start";
 
 import "./styles.css";
 
 const StyledMain = styled.main`
-  width: ${(window.innerHeight * 4) / 3}px;
-  height: ${window.innerHeight}px;
+  position: relative;
+  ${({ width }) => width && `width: ${(window.innerHeight * 4) / 3}px;`}
+  ${({ height }) => height && `height: ${window.innerHeight}px;`}
 `;
 
 const App = () => {
-  return <StyledMain></StyledMain>;
+  const [width, setWidth] = useState((window.innerHeight * 4) / 3);
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWidth((window.innerHeight * 4) / 3);
+      setHeight(window.innerHeight);
+    });
+  }, []);
+  return (
+    <StyledMain width={width} height={height}>
+      <Start />
+    </StyledMain>
+  );
 };
 
 export default App;
