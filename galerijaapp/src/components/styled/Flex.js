@@ -32,6 +32,7 @@ export const flex = css`
   ${({ position }) => position && `position: ${position};`}
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}
+  ${({ css }) => css && css}
 `;
 
 const Flex = styled.div`

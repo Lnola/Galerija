@@ -19,6 +19,7 @@ const ColorCircle = styled.span`
   text-align: center;
   justify-content: center;
   align-items: center;
+  overflow: auto !important;
 
   span {
     max-width: 200px;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
 import Start from "./screens/Start";
+import Welcome from "./screens/Welcome";
 
 import "./styles.css";
 
@@ -23,7 +24,8 @@ const App = () => {
   }, []);
   return (
     <StyledMain width={width} height={height}>
-      <Start />
+      {/* <Start /> */}
+      <Welcome />
     </StyledMain>
   );
 };
