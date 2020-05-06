@@ -14,6 +14,14 @@
   user-select: none;
 }
 
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
 #root {
   height: 100vh;
   width: 100vw;
@@ -24,7 +32,6 @@
 
 canvas {
   border: 5px solid #000;
-  border-radius: 60px;
   /* background-image: url("./images/peristil.jpg"); */
   /* background-size: 100%; */
 }

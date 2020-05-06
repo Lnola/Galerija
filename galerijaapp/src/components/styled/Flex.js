@@ -29,6 +29,7 @@ export const flex = css`
   ${({ alignSelf }) => alignSelf && `align-self: ${getAlignValue(alignSelf)};`}
   ${({ wrap }) => wrap && `flex-wrap: ${wrap};`}
   ${({ margin }) => margin && `margin: ${margin};`}
+  ${({ padding }) => padding && `padding: ${padding};`}
   ${({ position }) => position && `position: ${position};`}
   ${({ width }) => width && `width: ${width};`}
   ${({ height }) => height && `height: ${height};`}

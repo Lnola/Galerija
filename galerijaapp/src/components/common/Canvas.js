@@ -5,7 +5,7 @@ import { canvasSetup } from "../../utils/canvasSetup";
 import { strokeSetup } from "../../utils/strokeSetup";
 import { FlexSection } from "../styled/Flex";
 
-const Canvas = ({ width, height }) => {
+const Canvas = ({ width, height, borderRadius }) => {
   const [color, setColor] = useState("#000");
   const [brushWidth, setBrushWidth] = useState("8");
   const [isStrokeVisible, setIsStrokeVisible] = useState(false);
@@ -20,7 +20,7 @@ const Canvas = ({ width, height }) => {
 
   return (
     <FlexSection>
-      <canvas />
+      <canvas style={{ borderRadius: `${borderRadius}px` }} />
       <FlexSection direction="column" margin="5px 0 0 5px" position="relative">
         <span
           className="arrow"

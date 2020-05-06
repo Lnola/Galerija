@@ -50,7 +50,7 @@ const Start = () => {
       <img className="red-arrow" src={RedArrow} alt="Red Arrow" />
 
       <div className="start-canvas">
-        <Canvas width="500" height="500" borderRadius="100px" />
+        <Canvas width="500" height="500" borderRadius="60" />
       </div>
 
       <FlexSection wrap="wrap" justifyContent="center">
