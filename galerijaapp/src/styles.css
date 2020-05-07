@@ -36,7 +36,7 @@ img {
 canvas {
   border: 5px solid #000;
   /* background-image: url("./images/peristil.jpg"); */
-  /* background-size: 100%; */
+  background-size: 100%;
 }
 
 .arrow {

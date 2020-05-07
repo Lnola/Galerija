@@ -5,6 +5,14 @@ import Start from "./screens/Start";
 import Welcome from "./screens/Welcome";
 import Selfportrait from "./screens/Selfportrait";
 import RedCircle from "./screens/RedCircle";
+import Peristil from "./screens/Peristil";
+import Expressionism from "./screens/Expressionism";
+import Bird from "./screens/Bird";
+import Artist from "./screens/Artist";
+import SamIV from "./screens/SamIV";
+import Sun from "./screens/Sun";
+import Dancing from "./screens/Dancing";
+import Garbage from "./screens/Garbage";
 
 import "./styles.css";
 
@@ -30,6 +38,14 @@ const App = () => {
       {/* <Welcome /> */}
       {/* <Selfportrait /> */}
       {/* <RedCircle /> */}
+      {/* <Peristil /> */}
+      <Expressionism />
+      {/* <Bird /> */}
+      {/* <Artist /> */}
+      {/* <SamIV /> */}
+      {/* <Sun /> */}
+      {/* <Dancing /> */}
+      {/* <Garbage /> */}
     </StyledMain>
   );
 };
