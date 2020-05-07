@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Start from "./screens/Start";
 import Welcome from "./screens/Welcome";
 import Selfportrait from "./screens/Selfportrait";
+import RedCircle from "./screens/RedCircle";
 
 import "./styles.css";
 
@@ -27,7 +28,8 @@ const App = () => {
     <StyledMain width={width} height={height}>
       {/* <Start /> */}
       {/* <Welcome /> */}
-      <Selfportrait />
+      {/* <Selfportrait /> */}
+      {/* <RedCircle /> */}
     </StyledMain>
   );
 };

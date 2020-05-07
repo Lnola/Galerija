@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 const style = css`
   ${({ color }) => color && `color: ${color};`}
   ${({ isBold }) => isBold && `font-weight: bold;`}
+
   text-shadow:none;
 `;
 
