@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { FlexSection } from "../../components/styled/Flex";
 import Canvas from "../../components/common/Canvas";

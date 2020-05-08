@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Canvas from "../../components/common/Canvas";
 import { ColoredTextSpan } from "../../components/styled/ColoredText";
 
@@ -40,8 +40,8 @@ const Peristil = () => {
           <Arrow src={OrangeArrowDown} alt="orange arrow down" />
         )}
         <Canvas
-          width={1000}
-          height={582.5}
+          width="1000"
+          height="582.5"
           backgroundImage={PeristilImage}
           setIsCanvasClicked={setIsCanvasClicked}
         />

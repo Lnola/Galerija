@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-
 import { HuePicker } from "react-color";
+
 import { canvasSetup } from "../../utils/canvasSetup";
 import { strokeSetup } from "../../utils/strokeSetup";
 import { FlexSection } from "../styled/Flex";
@@ -18,14 +18,12 @@ const Canvas = ({
   const [isStrokeVisible, setIsStrokeVisible] = useState(false);
 
   useEffect(() => {
-    if (canvasId === undefined) canvasId = 0;
-    canvasSetup(width, height, canvasId);
-  }, [width, height]);
+    canvasSetup(width, height, canvasId === undefined ? 0 : canvasId);
+  }, [width, height, canvasId]);
 
   useEffect(() => {
-    if (canvasId === undefined) canvasId = 0;
-    strokeSetup(color, brushWidth, canvasId);
-  }, [color, brushWidth]);
+    strokeSetup(color, brushWidth, canvasId === undefined ? 0 : canvasId);
+  }, [color, brushWidth, canvasId]);
 
   return (
     <FlexSection>

@@ -32,20 +32,24 @@ const App = () => {
       setHeight(window.innerHeight);
     });
   }, []);
+
+  const screensArray = [
+    <Start />,
+    <Welcome />,
+    <Selfportrait />,
+    <RedCircle />,
+    <Peristil />,
+    <Expressionism />,
+    <Bird />,
+    <Artist />,
+    <SamIV />,
+    <Sun />,
+    <Dancing />,
+    <Garbage />,
+  ];
   return (
     <StyledMain width={width} height={height}>
-      {/* <Start /> */}
-      {/* <Welcome /> */}
-      {/* <Selfportrait /> */}
-      {/* <RedCircle /> */}
-      {/* <Peristil /> */}
-      {/* <Expressionism /> */}
-      {/* <Bird /> */}
-      {/* <Artist /> */}
-      {/* <SamIV /> */}
-      {/* <Sun /> */}
-      {/* <Dancing /> */}
-      <Garbage />
+      {screensArray[11]}
     </StyledMain>
   );
 };

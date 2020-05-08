@@ -1,6 +1,6 @@
 import React from "react";
 // import { FlexSection } from "../../components/styled/Flex";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 // import BigBadaBoom from "../../images/BigBadaBoom.png";
 // import GreenBlock from "../../images/GreenBlock.png";

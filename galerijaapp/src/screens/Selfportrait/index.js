@@ -39,7 +39,7 @@ const Selfportrait = () => {
             Pokušaj to napraviti na ovaj način!
           </ColoredText>
         </figcaption>
-        <Canvas width={350} height={580} />
+        <Canvas width="350" height="580" />
       </figure>
     </FlexSection>
   );

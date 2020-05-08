@@ -28,7 +28,7 @@ const SamIV = () => {
       <Flex direction="column">
         <StyledImage src={SamIvText} alt="SamIV" height="300px" />
         <CanvasWrapper>
-          <Canvas width={450} height={350} />
+          <Canvas width="450" height="350" />
         </CanvasWrapper>
       </Flex>
     </FlexSection>

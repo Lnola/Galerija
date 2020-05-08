@@ -25,8 +25,8 @@ const Bird = () => {
       </p>
 
       <Flex justifyContent="space-around" margin="5% 0 0 0">
-        <Canvas width={500} height={523} backgroundImage={zarptica} />
-        <Canvas width={500} height={523} canvasId={1} />
+        <Canvas width="500" height="523" backgroundImage={zarptica} />
+        <Canvas width="500" height="523" canvasId={1} />
       </Flex>
     </FlexSection>
   );
