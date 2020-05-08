@@ -44,8 +44,8 @@ const App = () => {
       {/* <Artist /> */}
       {/* <SamIV /> */}
       {/* <Sun /> */}
-      <Dancing />
-      {/* <Garbage /> */}
+      {/* <Dancing /> */}
+      <Garbage />
     </StyledMain>
   );
 };
