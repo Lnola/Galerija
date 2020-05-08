@@ -9,6 +9,7 @@ const style = css`
 
 export const ColoredTextSpan = styled.span`
   ${style}
+  ${({ marginLeft }) => marginLeft && `margin-left: ${marginLeft};`}
 `;
 
 const ColoredText = styled.p`

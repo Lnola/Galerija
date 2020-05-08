@@ -39,8 +39,8 @@ const App = () => {
       {/* <Selfportrait /> */}
       {/* <RedCircle /> */}
       {/* <Peristil /> */}
-      <Expressionism />
-      {/* <Bird /> */}
+      {/* <Expressionism /> */}
+      <Bird />
       {/* <Artist /> */}
       {/* <SamIV /> */}
       {/* <Sun /> */}

@@ -11,17 +11,20 @@ const Canvas = ({
   borderRadius,
   backgroundImage,
   setIsCanvasClicked,
+  canvasId,
 }) => {
   const [color, setColor] = useState("#000");
   const [brushWidth, setBrushWidth] = useState("8");
   const [isStrokeVisible, setIsStrokeVisible] = useState(false);
 
   useEffect(() => {
-    canvasSetup(width, height);
+    if (canvasId === undefined) canvasId = 0;
+    canvasSetup(width, height, canvasId);
   }, [width, height]);
 
   useEffect(() => {
-    strokeSetup(color, brushWidth);
+    if (canvasId === undefined) canvasId = 0;
+    strokeSetup(color, brushWidth, canvasId);
   }, [color, brushWidth]);
 
   return (

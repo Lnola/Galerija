@@ -1,5 +1,5 @@
-export const canvasSetup = (width, height) => {
-  const canvas = document.getElementsByTagName("canvas")[0];
+export const canvasSetup = (width, height, canvasId) => {
+  const canvas = document.getElementsByTagName("canvas")[canvasId];
   const ctx = canvas.getContext("2d");
 
   canvas.width = width;
