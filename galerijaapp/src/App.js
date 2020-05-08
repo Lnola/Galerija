@@ -43,8 +43,8 @@ const App = () => {
       {/* <Bird /> */}
       {/* <Artist /> */}
       {/* <SamIV /> */}
-      <Sun />
-      {/* <Dancing /> */}
+      {/* <Sun /> */}
+      <Dancing />
       {/* <Garbage /> */}
     </StyledMain>
   );

@@ -2,6 +2,10 @@ export const canvasSetup = (width, height, canvasId) => {
   const canvas = document.getElementsByTagName("canvas")[canvasId];
   const ctx = canvas.getContext("2d");
 
+  if (width.includes("%")) width = (window.innerWidth * parseInt(width)) / 100;
+  if (height.includes("%"))
+    height = (window.innerHeight * parseInt(height)) / 100;
+
   canvas.width = width;
   canvas.height = height;
 
