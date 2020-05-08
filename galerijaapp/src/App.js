@@ -41,8 +41,8 @@ const App = () => {
       {/* <Peristil /> */}
       {/* <Expressionism /> */}
       {/* <Bird /> */}
-      <Artist />
-      {/* <SamIV /> */}
+      {/* <Artist /> */}
+      <SamIV />
       {/* <Sun /> */}
       {/* <Dancing /> */}
       {/* <Garbage /> */}
