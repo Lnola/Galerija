@@ -40,8 +40,8 @@ const App = () => {
       {/* <RedCircle /> */}
       {/* <Peristil /> */}
       {/* <Expressionism /> */}
-      <Bird />
-      {/* <Artist /> */}
+      {/* <Bird /> */}
+      <Artist />
       {/* <SamIV /> */}
       {/* <Sun /> */}
       {/* <Dancing /> */}

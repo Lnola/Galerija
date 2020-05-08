@@ -6,6 +6,7 @@ const LineInput = styled.input`
   ${({ fontSize }) => fontSize && `font-size: ${fontSize};`}
   ${({ width }) => width && `width: ${width};`}
   ${({ margin }) => margin && `margin: ${margin};`}
+  ${({ css }) => css && css}
 `;
 
 export default LineInput;
