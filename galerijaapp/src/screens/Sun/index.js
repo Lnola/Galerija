@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import { FlexSection } from "../../components/styled/Flex";
 import SunImage from "../../images/sun.png";
+import { addSunInput } from "../../services/user";
 
 const StyledImage = styled.img`
   height: 90%;
@@ -24,6 +25,13 @@ const Textarea = styled.textarea`
 
 const Sun = () => {
   const [input, setInput] = useState("");
+
+  useEffect(() => {
+    const id = localStorage.getItem("id");
+    return () => {
+      addSunInput(id, input).then((res) => console.log(res));
+    };
+  }, []);
 
   return (
     <FlexSection

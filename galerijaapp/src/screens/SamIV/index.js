@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styled from "styled-components";
 import Flex, { FlexSection } from "../../components/styled/Flex";
@@ -6,6 +6,8 @@ import Canvas from "../../components/common/Canvas";
 
 import SamIvImage from "../../images/samIV.jpg";
 import SamIvText from "../../images/samIVtext.png";
+import { convertCanvasToImg } from "../../utils/convertCanvasToImg";
+import { addSamIvImage } from "../../services/user";
 
 const StyledImage = styled.img`
   ${({ height }) => height && `height: ${height};`}
@@ -17,6 +19,14 @@ const CanvasWrapper = styled.span`
 `;
 
 const SamIV = () => {
+  useEffect(() => {
+    const id = localStorage.getItem("id");
+    return () => {
+      const drawing = convertCanvasToImg(0);
+      addSamIvImage(id, drawing).then((res) => console.log(res));
+    };
+  }, []);
+
   return (
     <FlexSection
       height="100%"

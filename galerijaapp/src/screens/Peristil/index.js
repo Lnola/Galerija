@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Canvas from "../../components/common/Canvas";
 import { ColoredTextSpan } from "../../components/styled/ColoredText";
 
@@ -6,6 +6,8 @@ import OrangeArrowDown from "../../images/orangeArrowDown.png";
 import PeristilImage from "../../images/peristil.jpg";
 import styled from "styled-components";
 import Flex, { FlexSection } from "../../components/styled/Flex";
+import { addPeristilImage } from "../../services/user";
+import { convertCanvasToImg } from "../../utils/convertCanvasToImg";
 
 const Arrow = styled.img`
   position: absolute;
@@ -20,6 +22,14 @@ const Text = styled.p`
 
 const Peristil = () => {
   const [isCanvasClicked, setIsCanvasClicked] = useState(false);
+
+  useEffect(() => {
+    const id = localStorage.getItem("id");
+    return () => {
+      const drawing = convertCanvasToImg(0);
+      addPeristilImage(id, drawing).then((res) => console.log(res));
+    };
+  }, []);
 
   return (
     <FlexSection

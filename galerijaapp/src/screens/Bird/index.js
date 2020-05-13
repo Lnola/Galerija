@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Flex, { FlexSection } from "../../components/styled/Flex";
 import { ColoredTextSpan } from "../../components/styled/ColoredText";
@@ -6,12 +6,31 @@ import { css } from "styled-components";
 import Canvas from "../../components/common/Canvas";
 
 import zarptica from "../../images/zarptica.jpg";
+import {
+  addBirdWithBackground,
+  addBirdWithoutBackground,
+} from "../../services/user";
+import { convertCanvasToImg } from "../../utils/convertCanvasToImg";
 
 const SectionCss = css`
   font-size: 28px;
 `;
 
 const Bird = () => {
+  useEffect(() => {
+    const id = localStorage.getItem("id");
+    return () => {
+      const birdWithBackground = convertCanvasToImg(0);
+      const birdWithoutBackground = convertCanvasToImg(1);
+      addBirdWithBackground(id, birdWithBackground).then((res) =>
+        console.log(res)
+      );
+      addBirdWithoutBackground(id, birdWithoutBackground).then((res) =>
+        console.log(res)
+      );
+    };
+  }, []);
+
   return (
     <FlexSection direction="column" margin="4% 0 0 0" css={SectionCss}>
       <p>

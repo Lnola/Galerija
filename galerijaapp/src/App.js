@@ -16,6 +16,7 @@ import Garbage from "./screens/Garbage";
 
 import "./styles.css";
 import { findOrDefaultLS } from "./utils/findOrDefaultLS";
+import { addUser } from "./services/user";
 
 const useKey = (key, callback) => {
   const callbackRef = useRef(callback);
@@ -60,6 +61,13 @@ const App = () => {
       setWidth((window.innerHeight * 4) / 3);
       setHeight(window.innerHeight);
     });
+  }, []);
+
+  useEffect(() => {
+    const id = findOrDefaultLS("id", null, true);
+    if (!id) {
+      addUser(null).then(({ data }) => localStorage.setItem("id", data));
+    }
   }, []);
 
   const handleNextSlide = () => {

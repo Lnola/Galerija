@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Canvas from "../../components/common/Canvas";
 import ColoredText from "../../components/styled/ColoredText";
 import { FlexSection } from "../../components/styled/Flex";
 import SelfportraitImage from "../../images/Selfportrait.png";
 
 import "./styles.css";
+import { convertCanvasToImg } from "../../utils/convertCanvasToImg";
+import { addSelfportraitImage } from "../../services/user";
 
 const Selfportrait = () => {
+  useEffect(() => {
+    const id = localStorage.getItem("id");
+    return () => {
+      const drawing = convertCanvasToImg(0);
+      addSelfportraitImage(id, drawing).then((res) => console.log(res));
+    };
+  }, []);
+
   return (
     <FlexSection
       height="100%"

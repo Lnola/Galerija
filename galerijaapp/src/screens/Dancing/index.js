@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { FlexSection } from "../../components/styled/Flex";
@@ -6,6 +6,8 @@ import Canvas from "../../components/common/Canvas";
 import ColoredText from "../../components/styled/ColoredText";
 
 import DancingImage from "../../images/dancing.jpg";
+import { convertCanvasToImg } from "../../utils/convertCanvasToImg";
+import { addDancingImage } from "../../services/user";
 
 const Text = styled.span`
   font-size: 28px;
@@ -14,6 +16,14 @@ const Text = styled.span`
 `;
 
 const Dancing = () => {
+  useEffect(() => {
+    const id = localStorage.getItem("id");
+    return () => {
+      const drawing = convertCanvasToImg(0);
+      addDancingImage(id, drawing).then((res) => console.log(res));
+    };
+  }, []);
+
   return (
     <FlexSection
       height="100%"

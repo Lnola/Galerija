@@ -4,9 +4,10 @@ import styled from "styled-components";
 import Canvas from "../../components/common/Canvas";
 import RedArrow from "../../images/RedArrow.png";
 import { FlexSection } from "../../components/styled/Flex";
-import { getAllUsers } from "../../services/user";
+import { addGalleryDrawing } from "../../services/user";
 
 import "./styles.css";
+import { convertCanvasToImg } from "../../utils/convertCanvasToImg";
 
 const ColorCircle = styled.span`
   ${({ color }) => color && `background-color:${color}`};
@@ -38,8 +39,12 @@ const Heading = styled.p`
 
 const Start = () => {
   useEffect(() => {
-    getAllUsers().then(({ data }) => console.log(data));
-  });
+    const id = localStorage.getItem("id");
+    return () => {
+      const drawing = convertCanvasToImg(0);
+      addGalleryDrawing(id, drawing).then((res) => console.log(res));
+    };
+  }, []);
 
   return (
     <FlexSection justifyContent="center" wrap="wrap">

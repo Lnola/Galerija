@@ -3,7 +3,6 @@
   padding: 0;
   text-decoration: none;
   font-family: "Calibri";
-  overflow: hidden;
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -15,6 +14,10 @@
 
 *:focus {
   outline: none;
+}
+
+main {
+  overflow: hidden;
 }
 
 img {

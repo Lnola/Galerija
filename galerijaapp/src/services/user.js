@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const base = "https://localhost:44373/users";
-const base = "http://api.lnola.com/users";
+const base = "https://localhost:44373/users";
+// const base = "http://api.lnola.com/users";
 
 export const getUser = (id) => {
   return axios.get(`${base}/${id}`);
