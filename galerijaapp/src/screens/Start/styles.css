@@ -6,7 +6,7 @@
 
 .purple-circle {
   top: 5%;
-  left: 0;
+  left: 3%;
 }
 
 .green-circle {
@@ -15,8 +15,9 @@
 }
 
 .red-arrow {
-  top: 33%;
-  left: 8%;
+  top: 35%;
+  left: 11%;
+  height: 20%;
 }
 
 .start-canvas {

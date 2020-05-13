@@ -7,6 +7,8 @@ import LineInput from "../../components/styled/LineInput";
 
 const StyledImage = styled.img`
   height: 90%;
+  position: relative;
+  ${({ animation }) => animation && `animation: ${animation} 1s;`}
 `;
 
 const LineCss = css`
@@ -18,8 +20,9 @@ const LineCss = css`
   border-bottom: none;
 `;
 
-const Artist = () => {
+const Artist = ({ animation }) => {
   const [input, setInput] = useState("");
+
   return (
     <FlexSection
       height="100%"
@@ -27,7 +30,7 @@ const Artist = () => {
       alignItems="center"
       position="relative"
     >
-      <StyledImage src={ArtistImg} alt="Artist" />
+      <StyledImage src={ArtistImg} alt="Artist" animation={animation} />
       <LineInput
         width="100%"
         fontSize="22px"

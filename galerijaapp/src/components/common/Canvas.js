@@ -4,6 +4,21 @@ import { HuePicker } from "react-color";
 import { canvasSetup } from "../../utils/canvasSetup";
 import { strokeSetup } from "../../utils/strokeSetup";
 import { FlexSection } from "../styled/Flex";
+import styled from "styled-components";
+
+const ColorSpan = styled.span`
+  position: absolute;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  animation: easeIn 1.25s;
+
+  ${({ bottom }) => bottom && `bottom: ${bottom};`}
+  ${({ backgroundColor }) =>
+    backgroundColor && `background-color: ${backgroundColor};`}
+`;
 
 const Canvas = ({
   width,
@@ -62,6 +77,20 @@ const Canvas = ({
               direction={"vertical"}
               height={"316px"}
               width={"16px"}
+            />
+            <ColorSpan
+              backgroundColor="#fff"
+              bottom="-40px"
+              onClick={() => {
+                setColor("#fff");
+              }}
+            />
+            <ColorSpan
+              backgroundColor="#000"
+              bottom="-65px"
+              onClick={() => {
+                setColor("#000");
+              }}
             />
           </FlexSection>
         )}

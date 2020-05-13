@@ -36,7 +36,8 @@ const RedCircle = () => {
   const [lineInput, setLineInput] = useState("");
   const [textareaInput, setTextareaInput] = useState("");
 
-  const color = "#e50000";
+  const color = "#3792cb";
+
   return (
     <FlexSection
       height="100%"
@@ -59,7 +60,6 @@ const RedCircle = () => {
             width="145px"
             margin="0 0 0 10px"
             type="text"
-            placeholder="Počinje s P..."
             value={lineInput}
             onChange={(e) => setLineInput(e.target.value)}
           />
@@ -78,7 +78,6 @@ const RedCircle = () => {
             Što misliš zašto?
           </ColoredTextSpan>
           <Textarea
-            placeholder="Napisi svoje misljenje..."
             value={textareaInput}
             onChange={(e) => setTextareaInput(e.target.value)}
           ></Textarea>

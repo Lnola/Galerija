@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import Canvas from "../../components/common/Canvas";
 import RedArrow from "../../images/RedArrow.png";
 import { FlexSection } from "../../components/styled/Flex";
+import { getAllUsers } from "../../services/user";
 
 import "./styles.css";
 
@@ -36,8 +37,12 @@ const Heading = styled.p`
 `;
 
 const Start = () => {
+  useEffect(() => {
+    getAllUsers().then(({ data }) => console.log(data));
+  });
+
   return (
-    <FlexSection wrap="wrap" justifyContent="center">
+    <FlexSection justifyContent="center" wrap="wrap">
       <ColorCircle color="purple" className="purple-circle">
         Nacrtaj Galeriju umjetnina!
       </ColorCircle>

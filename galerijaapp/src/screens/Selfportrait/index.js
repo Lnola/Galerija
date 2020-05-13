@@ -2,9 +2,6 @@ import React from "react";
 import Canvas from "../../components/common/Canvas";
 import ColoredText from "../../components/styled/ColoredText";
 import { FlexSection } from "../../components/styled/Flex";
-
-// import Tartaglia from "../../images/tartaglia.jpg";
-// import PurpleArrow from "../../images/PurpleArrow.png";
 import SelfportraitImage from "../../images/Selfportrait.png";
 
 import "./styles.css";
@@ -16,13 +13,6 @@ const Selfportrait = () => {
       justifyContent="space-between"
       alignItems="center"
     >
-      {/* <figure className="selfportrait-figure">
-        <img src={Tartaglia} alt="Marino Tartaglia" />
-        <img className="purple-arrow" src={PurpleArrow} alt="purple arrow" />
-        <figcaption>
-          Umjetnikov prikaz samog sebe naziva se AUTOPORTRET!
-        </figcaption>
-      </figure> */}
       <img
         className="selfportrait-figure"
         src={SelfportraitImage}
