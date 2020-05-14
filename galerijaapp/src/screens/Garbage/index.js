@@ -1,6 +1,5 @@
 import React from "react";
 
-import GarbageImage from "../../images/garbage.png";
 import styled from "styled-components";
 import { FlexSection } from "../../components/styled/Flex";
 import { ColoredTextSpan } from "../../components/styled/ColoredText";
@@ -19,10 +18,10 @@ const Text = styled.span`
   margin-left: -21%;
 `;
 
-const Garbage = ({ garbageInput, setGarbageInput }) => {
+const Garbage = ({ garbageInput, setGarbageInput, GarbageImg }) => {
   return (
     <FlexSection height="100%" justifyContent="center" wrap="wrap">
-      <StyledImage src={GarbageImage} alt="garbage" />
+      <StyledImage src={GarbageImg} alt="garbage" />
 
       <Text>
         Ovo je Vrt prošlosti i budućnosti. Posadili smo ga prije pet

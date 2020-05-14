@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Canvas from "../../components/common/Canvas";
 import { ColoredTextSpan } from "../../components/styled/ColoredText";
 
-import OrangeArrowDown from "../../images/orangeArrowDown.png";
-import PeristilImage from "../../images/peristil.jpg";
 import styled from "styled-components";
 import Flex, { FlexSection } from "../../components/styled/Flex";
 
@@ -18,7 +16,12 @@ const Text = styled.p`
   margin-bottom: -10%;
 `;
 
-const Peristil = ({ canvasSrc, updateUser }) => {
+const Peristil = ({
+  canvasSrc,
+  updateUser,
+  OrangeArrowDownImg,
+  PeristilImg,
+}) => {
   const [isCanvasClicked, setIsCanvasClicked] = useState(false);
 
   return (
@@ -37,12 +40,12 @@ const Peristil = ({ canvasSrc, updateUser }) => {
       </Text>
       <Flex position="relative" justifyContent="center">
         {!isCanvasClicked && (
-          <Arrow src={OrangeArrowDown} alt="orange arrow down" />
+          <Arrow src={OrangeArrowDownImg} alt="orange arrow down" />
         )}
         <Canvas
           width="1000"
           height="582.5"
-          backgroundImage={PeristilImage}
+          backgroundImage={PeristilImg}
           setIsCanvasClicked={setIsCanvasClicked}
           canvasSrc={canvasSrc}
           updateUser={updateUser}

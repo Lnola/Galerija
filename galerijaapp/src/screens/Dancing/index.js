@@ -5,15 +5,13 @@ import { FlexSection } from "../../components/styled/Flex";
 import Canvas from "../../components/common/Canvas";
 import ColoredText from "../../components/styled/ColoredText";
 
-import DancingImage from "../../images/dancing.jpg";
-
 const Text = styled.span`
   font-size: 28px;
   width: 25%;
   text-shadow: 0px 0px 0.6px #000;
 `;
 
-const Dancing = ({ canvasSrc, updateUser }) => {
+const Dancing = ({ canvasSrc, updateUser, DancingImg }) => {
   return (
     <FlexSection
       height="100%"
@@ -23,7 +21,7 @@ const Dancing = ({ canvasSrc, updateUser }) => {
       <Canvas
         width="50%"
         height="90%"
-        backgroundImage={DancingImage}
+        backgroundImage={DancingImg}
         canvasSrc={canvasSrc}
         updateUser={updateUser}
         parent="dancing"

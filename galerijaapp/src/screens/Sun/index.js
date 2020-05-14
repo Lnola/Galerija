@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import { FlexSection } from "../../components/styled/Flex";
-import SunImage from "../../images/sun.png";
 
 const StyledImage = styled.img`
   height: 90%;
@@ -22,7 +21,7 @@ const Textarea = styled.textarea`
   box-sizing: border-box;
 `;
 
-const Sun = ({ sunInput, setSunInput }) => {
+const Sun = ({ sunInput, setSunInput, SunImg }) => {
   return (
     <FlexSection
       height="100%"
@@ -30,7 +29,7 @@ const Sun = ({ sunInput, setSunInput }) => {
       alignItems="center"
       position="relative"
     >
-      <StyledImage src={SunImage} alt="U ime ja" />
+      <StyledImage src={SunImg} alt="U ime ja" />
       <Textarea
         value={sunInput}
         onChange={(e) => setSunInput(e.target.value)}

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import Canvas from "../../components/common/Canvas";
-import RedArrow from "../../images/RedArrow.png";
 import { FlexSection } from "../../components/styled/Flex";
 
 import "./styles.css";
@@ -35,7 +34,7 @@ const Heading = styled.p`
   text-align: center;
 `;
 
-const Start = ({ canvasSrc, updateUser }) => {
+const Start = ({ canvasSrc, updateUser, RedArrowImg }) => {
   return (
     <FlexSection justifyContent="center" wrap="wrap">
       <ColorCircle color="purple" className="purple-circle">
@@ -47,7 +46,7 @@ const Start = ({ canvasSrc, updateUser }) => {
           <br /> Nacrtaj ju onakvom kakvom ju zamišljaš
         </span>
       </ColorCircle>
-      <img className="red-arrow" src={RedArrow} alt="Red Arrow" />
+      <img className="red-arrow" src={RedArrowImg} alt="Red Arrow" />
 
       <div className="start-canvas">
         <Canvas

@@ -5,13 +5,11 @@ import { ColoredTextSpan } from "../../components/styled/ColoredText";
 import { css } from "styled-components";
 import Canvas from "../../components/common/Canvas";
 
-import zarptica from "../../images/zarptica.jpg";
-
 const SectionCss = css`
   font-size: 28px;
 `;
 
-const Bird = ({ wcanvasSrc, wocanvasSrc, updateUser }) => {
+const Bird = ({ wcanvasSrc, wocanvasSrc, updateUser, ZarPticaImg }) => {
   return (
     <FlexSection direction="column" margin="4% 0 0 0" css={SectionCss}>
       <p>
@@ -28,7 +26,7 @@ const Bird = ({ wcanvasSrc, wocanvasSrc, updateUser }) => {
         <Canvas
           width="500"
           height="523"
-          backgroundImage={zarptica}
+          backgroundImage={ZarPticaImg}
           canvasSrc={wcanvasSrc}
           updateUser={updateUser}
           parent="wbird"

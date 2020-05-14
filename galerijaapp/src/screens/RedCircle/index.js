@@ -1,7 +1,5 @@
 import React from "react";
 
-import RedPeristil from "../../images/redPeristil.jpg";
-import RedCirclePeristil from "../../images/redCirclePeristil.png";
 import { ColoredTextSpan } from "../../components/styled/ColoredText";
 import LineInput from "../../components/styled/LineInput";
 import { FlexSection } from "../../components/styled/Flex";
@@ -37,6 +35,8 @@ const RedCircle = ({
   setRedCircleLocation,
   redCircleExplanation,
   setRedCircleExplanation,
+  RedPeristilImg,
+  RedCirclePeristilImg,
 }) => {
   const color = "#3792cb";
 
@@ -47,8 +47,8 @@ const RedCircle = ({
       alignItems="center"
     >
       <FlexSection direction="column" css={imagesCss}>
-        <img src={RedPeristil} alt="" />
-        <img src={RedCirclePeristil} alt="" />
+        <img src={RedPeristilImg} alt="" />
+        <img src={RedCirclePeristilImg} alt="" />
       </FlexSection>
 
       <FlexSection direction="column" css={textCss}>
@@ -80,8 +80,8 @@ const RedCircle = ({
             Što misliš zašto?
           </ColoredTextSpan>
           <Textarea
-            value={redCircleLocation}
-            onChange={(e) => setRedCircleLocation(e.target.value)}
+            value={redCircleExplanation}
+            onChange={(e) => setRedCircleExplanation(e.target.value)}
           ></Textarea>
         </article>
       </FlexSection>

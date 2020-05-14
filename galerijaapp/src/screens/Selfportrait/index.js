@@ -2,11 +2,10 @@ import React from "react";
 import Canvas from "../../components/common/Canvas";
 import ColoredText from "../../components/styled/ColoredText";
 import { FlexSection } from "../../components/styled/Flex";
-import SelfportraitImage from "../../images/Selfportrait.png";
 
 import "./styles.css";
 
-const Selfportrait = ({ canvasSrc, updateUser }) => {
+const Selfportrait = ({ canvasSrc, updateUser, SelfportraitImg }) => {
   return (
     <FlexSection
       height="100%"
@@ -15,7 +14,7 @@ const Selfportrait = ({ canvasSrc, updateUser }) => {
     >
       <img
         className="selfportrait-figure"
-        src={SelfportraitImage}
+        src={SelfportraitImg}
         alt="selfportrait"
       />
 

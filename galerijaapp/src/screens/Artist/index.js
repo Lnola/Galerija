@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 
-import ArtistImg from "../../images/artist.png";
 import styled, { css } from "styled-components";
 import { FlexSection } from "../../components/styled/Flex";
 import LineInput from "../../components/styled/LineInput";
@@ -20,7 +19,7 @@ const LineCss = css`
   border-bottom: none;
 `;
 
-const Artist = ({ animation, artistInput, setArtistInput }) => {
+const Artist = ({ animation, artistInput, setArtistInput, ArtistImg }) => {
   return (
     <FlexSection
       height="100%"

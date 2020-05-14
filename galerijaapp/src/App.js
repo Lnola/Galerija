@@ -15,6 +15,7 @@ import Dancing from "./screens/Dancing";
 import Garbage from "./screens/Garbage";
 
 import "./styles.css";
+import "./assets/fonts/fonts.css";
 import { findOrDefaultLS } from "./utils/findOrDefaultLS";
 import {
   addUser,
@@ -26,6 +27,22 @@ import {
   addSunInput,
   addGarbageInput,
 } from "./services/user";
+
+import ArtistImg from "./assets/images/artist.png";
+import DancingImg from "./assets/images/dancing.jpg";
+import ExpressionismImg from "./assets/images/expressionism.png";
+import GarbageImg from "./assets/images/garbage.png";
+import OrangeArrowDownImg from "./assets/images/orangeArrowDown.png";
+import PeristilImg from "./assets/images/peristil.jpg";
+import RedArrowImg from "./assets/images/redArrow.png";
+import RedCirclePeristilImg from "./assets/images/redCirclePeristil.png";
+import RedPeristilImg from "./assets/images/redPeristil.jpg";
+import SamIvImg from "./assets/images/samIv.jpg";
+import SamIvTextImg from "./assets/images/samIvText.png";
+import SelfportraitImg from "./assets/images/selfportrait.png";
+import SunImg from "./assets/images/sun.png";
+import WelcomeImg from "./assets/images/welcome.png";
+import ZarPticaImg from "./assets/images/zarptica.jpg";
 
 const useKey = (key, callback) => {
   const callbackRef = useRef(callback);
@@ -178,46 +195,62 @@ const App = () => {
     <Start
       canvasSrc={user !== null && user.galleryDrawing}
       updateUser={updateUser}
+      RedArrowImg={RedArrowImg}
     />,
-    <Welcome />,
+    <Welcome WelcomeImg={WelcomeImg} />,
     <Selfportrait
       canvasSrc={user !== null && user.selfportraitImage}
       updateUser={updateUser}
+      SelfportraitImg={SelfportraitImg}
     />,
     <RedCircle
       redCircleLocation={redCircleLocation}
       redCircleExplanation={redCircleExplanation}
       setRedCircleLocation={setRedCircleLocation}
       setRedCircleExplanation={setRedCircleExplanation}
+      RedCirclePeristilImg={RedCirclePeristilImg}
+      RedPeristilImg={RedPeristilImg}
     />,
     <Peristil
       canvasSrc={user !== null && user.peristilImage}
       updateUser={updateUser}
+      OrangeArrowDownImg={OrangeArrowDownImg}
+      PeristilImg={PeristilImg}
     />,
     <Expressionism
       expressionismInput={expressionismInput}
       setExpressionismInput={setExpressionismInput}
+      ExpressionismImg={ExpressionismImg}
     />,
     <Bird
       wcanvasSrc={user !== null && user.birdWithBackground}
       wocanvasSrc={user !== null && user.birdWithoutBackground}
       updateUser={updateUser}
+      ZarPticaImg={ZarPticaImg}
     />,
     <Artist
       animation={animation}
       artistInput={artistInput}
       setArtistInput={setArtistInput}
+      ArtistImg={ArtistImg}
     />,
     <SamIV
       canvasSrc={user !== null && user.samIVImage}
       updateUser={updateUser}
+      SamIvImg={SamIvImg}
+      SamIvTextImg={SamIvTextImg}
     />,
-    <Sun sunInput={sunInput} setSunInput={setSunInput} />,
+    <Sun sunInput={sunInput} setSunInput={setSunInput} SunImg={SunImg} />,
     <Dancing
       canvasSrc={user !== null && user.dancingImage}
       updateUser={updateUser}
+      DancingImg={DancingImg}
     />,
-    <Garbage garbageInput={garbageInput} setGarbageInput={setGarbageInput} />,
+    <Garbage
+      garbageInput={garbageInput}
+      setGarbageInput={setGarbageInput}
+      GarbageImg={GarbageImg}
+    />,
   ];
 
   return (

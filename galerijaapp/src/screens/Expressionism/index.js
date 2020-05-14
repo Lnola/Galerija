@@ -1,8 +1,6 @@
 import React from "react";
 
 import { FlexSection, FlexArticle } from "../../components/styled/Flex";
-// import LineInput from "../../components/styled/LineInput";
-import ExpressionismImage from "../../images/expressionism.png";
 import styled from "styled-components";
 import ColoredText from "../../components/styled/ColoredText";
 
@@ -51,14 +49,18 @@ const TextWrapper = styled.span`
   margin-bottom: 30px;
 `;
 
-const Expressionism = ({ expressionismInput, setExpressionismInput }) => {
+const Expressionism = ({
+  expressionismInput,
+  setExpressionismInput,
+  ExpressionismImg,
+}) => {
   return (
     <FlexSection
       height="100%"
       alignItems="center"
       justifyContent="space-around"
     >
-      <StyledImage src={ExpressionismImage} alt="expressionism" />
+      <StyledImage src={ExpressionismImg} alt="expressionism" />
 
       <FlexArticle width="40%" direction="column">
         <TextWrapper>

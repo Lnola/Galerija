@@ -5,6 +5,15 @@ import { canvasSetup } from "../../utils/canvasSetup";
 import { strokeSetup } from "../../utils/strokeSetup";
 import { FlexSection } from "../styled/Flex";
 import styled from "styled-components";
+import {
+  addGalleryDrawing,
+  addSelfportraitImage,
+  addPeristilImage,
+  addSamIvImage,
+  addDancingImage,
+  addBirdWithBackground,
+  addBirdWithoutBackground,
+} from "../../services/user";
 
 const ColorSpan = styled.span`
   position: absolute;
@@ -60,7 +69,37 @@ const Canvas = ({
     base_image.onload = () => {
       ctx.drawImage(base_image, 0, 0);
     };
-  }, [canvasSrc]);
+  }, [canvasSrc, canvasId]);
+
+  const clearCanvas = () => {
+    const id = localStorage.getItem("id");
+    switch (parent) {
+      case "start":
+        addGalleryDrawing(id, "").then(() => updateUser());
+        break;
+      case "selfportrait":
+        addSelfportraitImage(id, "").then(() => updateUser());
+        break;
+      case "peristil":
+        addPeristilImage(id, "").then(() => updateUser());
+        break;
+      case "wbird":
+        addBirdWithBackground(id, "").then(() => updateUser());
+        break;
+      case "wobird":
+        addBirdWithoutBackground(id, "").then(() => updateUser());
+        break;
+      case "samIV":
+        addSamIvImage(id, "").then(() => updateUser());
+        break;
+      case "dancing":
+        addDancingImage(id, "").then(() => updateUser());
+        break;
+
+      default:
+        break;
+    }
+  };
 
   return (
     <FlexSection>
@@ -114,6 +153,7 @@ const Canvas = ({
                 setColor("#000");
               }}
             />
+            <span onClick={clearCanvas}>Izbriši</span>
           </FlexSection>
         )}
       </FlexSection>
