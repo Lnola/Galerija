@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import Canvas from "../../components/common/Canvas";
 import RedArrow from "../../images/RedArrow.png";
 import { FlexSection } from "../../components/styled/Flex";
-import { addGalleryDrawing } from "../../services/user";
 
 import "./styles.css";
-import { convertCanvasToImg } from "../../utils/convertCanvasToImg";
 
 const ColorCircle = styled.span`
   ${({ color }) => color && `background-color:${color}`};
@@ -37,15 +35,7 @@ const Heading = styled.p`
   text-align: center;
 `;
 
-const Start = () => {
-  useEffect(() => {
-    const id = localStorage.getItem("id");
-    return () => {
-      const drawing = convertCanvasToImg(0);
-      addGalleryDrawing(id, drawing).then((res) => console.log(res));
-    };
-  }, []);
-
+const Start = ({ canvasSrc, updateUser }) => {
   return (
     <FlexSection justifyContent="center" wrap="wrap">
       <ColorCircle color="purple" className="purple-circle">
@@ -60,7 +50,14 @@ const Start = () => {
       <img className="red-arrow" src={RedArrow} alt="Red Arrow" />
 
       <div className="start-canvas">
-        <Canvas width="500" height="500" borderRadius="60" />
+        <Canvas
+          width="500"
+          height="500"
+          borderRadius="60"
+          canvasSrc={canvasSrc}
+          updateUser={updateUser}
+          parent={"start"}
+        />
       </div>
 
       <FlexSection wrap="wrap" justifyContent="center">

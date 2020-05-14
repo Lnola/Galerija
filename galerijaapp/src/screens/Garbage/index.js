@@ -26,7 +26,8 @@ const Garbage = () => {
   useEffect(() => {
     const id = localStorage.getItem("id");
     return () => {
-      addGarbageInput(id, input).then((res) => console.log(res));
+      addGarbageInput(id, input);
+      // .then((res) => console.log(res));
     };
   }, []);
 

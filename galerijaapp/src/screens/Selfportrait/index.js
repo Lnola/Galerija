@@ -1,22 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Canvas from "../../components/common/Canvas";
 import ColoredText from "../../components/styled/ColoredText";
 import { FlexSection } from "../../components/styled/Flex";
 import SelfportraitImage from "../../images/Selfportrait.png";
 
 import "./styles.css";
-import { convertCanvasToImg } from "../../utils/convertCanvasToImg";
-import { addSelfportraitImage } from "../../services/user";
 
-const Selfportrait = () => {
-  useEffect(() => {
-    const id = localStorage.getItem("id");
-    return () => {
-      const drawing = convertCanvasToImg(0);
-      addSelfportraitImage(id, drawing).then((res) => console.log(res));
-    };
-  }, []);
-
+const Selfportrait = ({ canvasSrc, updateUser }) => {
   return (
     <FlexSection
       height="100%"
@@ -39,7 +29,13 @@ const Selfportrait = () => {
             Pokušaj to napraviti na ovaj način!
           </ColoredText>
         </figcaption>
-        <Canvas width="350" height="580" />
+        <Canvas
+          width="350"
+          height="580"
+          canvasSrc={canvasSrc}
+          updateUser={updateUser}
+          parent="selfportrait"
+        />
       </figure>
     </FlexSection>
   );

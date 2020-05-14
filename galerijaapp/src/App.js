@@ -16,7 +16,7 @@ import Garbage from "./screens/Garbage";
 
 import "./styles.css";
 import { findOrDefaultLS } from "./utils/findOrDefaultLS";
-import { addUser } from "./services/user";
+import { addUser, getUser } from "./services/user";
 
 const useKey = (key, callback) => {
   const callbackRef = useRef(callback);
@@ -55,6 +55,7 @@ const App = () => {
   const [height, setHeight] = useState(window.innerHeight);
   const [screenIndex, setScreenIndex] = useState(lsScreenIndex);
   const [animation, setAnimation] = useState("slideFromRight");
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -67,8 +68,17 @@ const App = () => {
     const id = findOrDefaultLS("id", null, true);
     if (!id) {
       addUser(null).then(({ data }) => localStorage.setItem("id", data));
+    } else {
+      updateUser();
     }
-  }, []);
+  }, [screenIndex]);
+
+  const updateUser = () => {
+    const id = findOrDefaultLS("id", null, true);
+    getUser(id).then(({ data }) => {
+      setUser(data);
+    });
+  };
 
   const handleNextSlide = () => {
     if (screenIndex !== screensArray.length - 1) {
@@ -90,17 +100,36 @@ const App = () => {
   useKey(37, handlePreviousSlide);
 
   const screensArray = [
-    <Start />,
+    <Start
+      canvasSrc={user !== null && user.galleryDrawing}
+      updateUser={updateUser}
+    />,
     <Welcome />,
-    <Selfportrait />,
+    <Selfportrait
+      canvasSrc={user !== null && user.selfportraitImage}
+      updateUser={updateUser}
+    />,
     <RedCircle />,
-    <Peristil />,
+    <Peristil
+      canvasSrc={user !== null && user.peristilImage}
+      updateUser={updateUser}
+    />,
     <Expressionism />,
-    <Bird />,
+    <Bird
+      wcanvasSrc={user !== null && user.birdWithBackground}
+      wocanvasSrc={user !== null && user.birdWithoutBackground}
+      updateUser={updateUser}
+    />,
     <Artist animation={animation} />,
-    <SamIV />,
+    <SamIV
+      canvasSrc={user !== null && user.samIVImage}
+      updateUser={updateUser}
+    />,
     <Sun />,
-    <Dancing />,
+    <Dancing
+      canvasSrc={user !== null && user.dancingImage}
+      updateUser={updateUser}
+    />,
     <Garbage />,
   ];
 

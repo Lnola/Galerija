@@ -1,4 +1,15 @@
-export const canvasSetup = (width, height, canvasId) => {
+import {
+  addGalleryDrawing,
+  addSelfportraitImage,
+  addPeristilImage,
+  addBirdWithBackground,
+  addBirdWithoutBackground,
+  addSamIvImage,
+  addDancingImage,
+} from "../services/user";
+import { convertCanvasToImg } from "./convertCanvasToImg";
+
+export const canvasSetup = (width, height, canvasId, updateUser, parent) => {
   const canvas = document.getElementsByTagName("canvas")[canvasId];
   const ctx = canvas.getContext("2d");
 
@@ -19,6 +30,35 @@ export const canvasSetup = (width, height, canvasId) => {
   function finishedPosition() {
     painting = false;
     ctx.beginPath();
+    const id = localStorage.getItem("id");
+    const drawing = convertCanvasToImg(canvasId);
+
+    switch (parent) {
+      case "start":
+        addGalleryDrawing(id, drawing).then(() => updateUser());
+        break;
+      case "selfportrait":
+        addSelfportraitImage(id, drawing).then(() => updateUser());
+        break;
+      case "peristil":
+        addPeristilImage(id, drawing).then(() => updateUser());
+        break;
+      case "wbird":
+        addBirdWithBackground(id, drawing).then(() => updateUser());
+        break;
+      case "wobird":
+        addBirdWithoutBackground(id, drawing).then(() => updateUser());
+        break;
+      case "samIV":
+        addSamIvImage(id, drawing).then(() => updateUser());
+        break;
+      case "dancing":
+        addDancingImage(id, drawing).then(() => updateUser());
+        break;
+
+      default:
+        break;
+    }
   }
 
   function draw(e) {

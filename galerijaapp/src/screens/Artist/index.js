@@ -27,7 +27,8 @@ const Artist = ({ animation }) => {
   useEffect(() => {
     const id = localStorage.getItem("id");
     return () => {
-      addArtistInput(id, input).then((res) => console.log(res));
+      addArtistInput(id, input);
+      // .then((res) => console.log(res));
     };
   }, []);
 

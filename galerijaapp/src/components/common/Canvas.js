@@ -27,18 +27,40 @@ const Canvas = ({
   backgroundImage,
   setIsCanvasClicked,
   canvasId,
+  canvasSrc,
+  updateUser,
+  parent,
 }) => {
   const [color, setColor] = useState("#000");
   const [brushWidth, setBrushWidth] = useState("8");
   const [isStrokeVisible, setIsStrokeVisible] = useState(false);
 
   useEffect(() => {
-    canvasSetup(width, height, canvasId === undefined ? 0 : canvasId);
+    canvasSetup(
+      width,
+      height,
+      canvasId === undefined ? 0 : canvasId,
+      updateUser,
+      parent
+    );
   }, [width, height, canvasId]);
 
   useEffect(() => {
     strokeSetup(color, brushWidth, canvasId === undefined ? 0 : canvasId);
   }, [color, brushWidth, canvasId]);
+
+  useEffect(() => {
+    const canvas = document.getElementsByTagName("canvas")[
+      canvasId === undefined ? 0 : canvasId
+    ];
+    const ctx = canvas.getContext("2d");
+
+    const base_image = new Image();
+    base_image.src = canvasSrc;
+    base_image.onload = () => {
+      ctx.drawImage(base_image, 0, 0);
+    };
+  }, [canvasSrc]);
 
   return (
     <FlexSection>

@@ -58,7 +58,8 @@ const Expressionism = () => {
   useEffect(() => {
     const id = localStorage.getItem("id");
     return () => {
-      addExpressionismInput(id, textareaInput).then((res) => console.log(res));
+      addExpressionismInput(id, textareaInput);
+      // .then((res) => console.log(res));
     };
   }, []);
 

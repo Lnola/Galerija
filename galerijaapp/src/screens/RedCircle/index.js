@@ -36,7 +36,7 @@ const Textarea = styled.textarea`
   font-size: 22px;
 `;
 
-const RedCircle = () => {
+const RedCircle = ({ redCircleLocation, redCircleExplanation }) => {
   const [lineInput, setLineInput] = useState("");
   const [textareaInput, setTextareaInput] = useState("");
 
@@ -46,9 +46,7 @@ const RedCircle = () => {
     const id = localStorage.getItem("id");
     return () => {
       addRedCircleLocation(id, lineInput).then((res) => console.log(res));
-      addRedCircleExplanation(id, textareaInput).then((res) =>
-        console.log(res)
-      );
+      addRedCircleExplanation(id, textareaInput);
     };
   }, []);
 

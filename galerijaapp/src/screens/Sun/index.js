@@ -29,7 +29,8 @@ const Sun = () => {
   useEffect(() => {
     const id = localStorage.getItem("id");
     return () => {
-      addSunInput(id, input).then((res) => console.log(res));
+      addSunInput(id, input);
+      // .then((res) => console.log(res));
     };
   }, []);
 
