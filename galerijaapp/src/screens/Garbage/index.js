@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import GarbageImage from "../../images/garbage.png";
 import styled from "styled-components";
 import { FlexSection } from "../../components/styled/Flex";
 import { ColoredTextSpan } from "../../components/styled/ColoredText";
 import LineInput from "../../components/styled/LineInput";
-import { addGarbageInput } from "../../services/user";
 
 const StyledImage = styled.img`
   width: 96%;
@@ -20,17 +19,7 @@ const Text = styled.span`
   margin-left: -21%;
 `;
 
-const Garbage = () => {
-  const [input, setInput] = useState("");
-
-  useEffect(() => {
-    const id = localStorage.getItem("id");
-    return () => {
-      addGarbageInput(id, input);
-      // .then((res) => console.log(res));
-    };
-  }, []);
-
+const Garbage = ({ garbageInput, setGarbageInput }) => {
   return (
     <FlexSection height="100%" justifyContent="center" wrap="wrap">
       <StyledImage src={GarbageImage} alt="garbage" />
@@ -46,8 +35,8 @@ const Garbage = () => {
           margin="0 0 0 10px"
           width="350px"
           fontSize="22px"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
+          value={garbageInput}
+          onChange={(e) => setGarbageInput(e.target.value)}
         />
       </Text>
     </FlexSection>

@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { FlexSection, FlexArticle } from "../../components/styled/Flex";
 // import LineInput from "../../components/styled/LineInput";
 import ExpressionismImage from "../../images/expressionism.png";
 import styled from "styled-components";
 import ColoredText from "../../components/styled/ColoredText";
-import { addExpressionismInput } from "../../services/user";
 
 const StyledImage = styled.img`
   height: 90%;
@@ -52,17 +51,7 @@ const TextWrapper = styled.span`
   margin-bottom: 30px;
 `;
 
-const Expressionism = () => {
-  const [textareaInput, setTextareaInput] = useState("");
-
-  useEffect(() => {
-    const id = localStorage.getItem("id");
-    return () => {
-      addExpressionismInput(id, textareaInput);
-      // .then((res) => console.log(res));
-    };
-  }, []);
-
+const Expressionism = ({ expressionismInput, setExpressionismInput }) => {
   return (
     <FlexSection
       height="100%"
@@ -86,8 +75,8 @@ const Expressionism = () => {
           <Textarea
             cols="20"
             rows="3"
-            value={textareaInput}
-            onChange={(e) => setTextareaInput(e.target.value)}
+            value={expressionismInput}
+            onChange={(e) => setExpressionismInput(e.target.value)}
           />
         </TextareaWrapper>
       </FlexArticle>

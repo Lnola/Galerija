@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import RedPeristil from "../../images/redPeristil.jpg";
 import RedCirclePeristil from "../../images/redCirclePeristil.png";
@@ -6,10 +6,6 @@ import { ColoredTextSpan } from "../../components/styled/ColoredText";
 import LineInput from "../../components/styled/LineInput";
 import { FlexSection } from "../../components/styled/Flex";
 import styled, { css } from "styled-components";
-import {
-  addRedCircleLocation,
-  addRedCircleExplanation,
-} from "../../services/user";
 
 const imagesCss = css`
   img:first-of-type {
@@ -36,19 +32,13 @@ const Textarea = styled.textarea`
   font-size: 22px;
 `;
 
-const RedCircle = ({ redCircleLocation, redCircleExplanation }) => {
-  const [lineInput, setLineInput] = useState("");
-  const [textareaInput, setTextareaInput] = useState("");
-
+const RedCircle = ({
+  redCircleLocation,
+  setRedCircleLocation,
+  redCircleExplanation,
+  setRedCircleExplanation,
+}) => {
   const color = "#3792cb";
-
-  useEffect(() => {
-    const id = localStorage.getItem("id");
-    return () => {
-      addRedCircleLocation(id, lineInput).then((res) => console.log(res));
-      addRedCircleExplanation(id, textareaInput);
-    };
-  }, []);
 
   return (
     <FlexSection
@@ -72,8 +62,8 @@ const RedCircle = ({ redCircleLocation, redCircleExplanation }) => {
             width="145px"
             margin="0 0 0 10px"
             type="text"
-            value={lineInput}
-            onChange={(e) => setLineInput(e.target.value)}
+            value={redCircleLocation}
+            onChange={(e) => setRedCircleLocation(e.target.value)}
           />
         </article>
 
@@ -90,8 +80,8 @@ const RedCircle = ({ redCircleLocation, redCircleExplanation }) => {
             Što misliš zašto?
           </ColoredTextSpan>
           <Textarea
-            value={textareaInput}
-            onChange={(e) => setTextareaInput(e.target.value)}
+            value={redCircleLocation}
+            onChange={(e) => setRedCircleLocation(e.target.value)}
           ></Textarea>
         </article>
       </FlexSection>

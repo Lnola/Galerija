@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import ArtistImg from "../../images/artist.png";
 import styled, { css } from "styled-components";
 import { FlexSection } from "../../components/styled/Flex";
 import LineInput from "../../components/styled/LineInput";
-import { addArtistInput } from "../../services/user";
 
 const StyledImage = styled.img`
   height: 90%;
@@ -21,17 +20,7 @@ const LineCss = css`
   border-bottom: none;
 `;
 
-const Artist = ({ animation }) => {
-  const [input, setInput] = useState("");
-
-  useEffect(() => {
-    const id = localStorage.getItem("id");
-    return () => {
-      addArtistInput(id, input);
-      // .then((res) => console.log(res));
-    };
-  }, []);
-
+const Artist = ({ animation, artistInput, setArtistInput }) => {
   return (
     <FlexSection
       height="100%"
@@ -45,8 +34,8 @@ const Artist = ({ animation }) => {
         fontSize="22px"
         css={LineCss}
         autoFocus
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
+        value={artistInput}
+        onChange={(e) => setArtistInput(e.target.value)}
       />
     </FlexSection>
   );
