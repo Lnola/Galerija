@@ -30,7 +30,7 @@ const Selfportrait = ({ canvasSrc, updateUser, SelfportraitImg }) => {
         </figcaption>
         <Canvas
           width="350"
-          height="580"
+          height="65%"
           canvasSrc={canvasSrc}
           updateUser={updateUser}
           parent="selfportrait"

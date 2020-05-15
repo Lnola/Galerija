@@ -8,3 +8,7 @@ export const findOrDefaultLS = (item, defaultReturn, isInt) => {
     ? localStorage.getItem(`${item}`)
     : defaultReturn;
 };
+
+export const doesItemExistInLS = (item) => {
+  return localStorage.getItem(`${item}`) !== null;
+};

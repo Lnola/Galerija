@@ -16,7 +16,7 @@ import Garbage from "./screens/Garbage";
 
 import "./styles.css";
 import "./assets/fonts/fonts.css";
-import { findOrDefaultLS } from "./utils/findOrDefaultLS";
+import { findOrDefaultLS, doesItemExistInLS } from "./utils/findOrDefaultLS";
 import {
   addUser,
   getUser,
@@ -43,6 +43,7 @@ import SelfportraitImg from "./assets/images/selfportrait.png";
 import SunImg from "./assets/images/sun.png";
 import WelcomeImg from "./assets/images/welcome.png";
 import ZarPticaImg from "./assets/images/zarptica.jpg";
+import NamePrompt from "./components/common/NamePrompt";
 
 const useKey = (key, callback) => {
   const callbackRef = useRef(callback);
@@ -83,6 +84,9 @@ const App = () => {
   const [animation, setAnimation] = useState("slideFromRight");
   const [user, setUser] = useState(null);
   const [isUpdateFinished, setIsUpdateFinished] = useState(true);
+  const [isNamePromptShown, setIsNamePromptShown] = useState(
+    !doesItemExistInLS("id")
+  );
   // RedCircle state
   const [redCircleLocation, setRedCircleLocation] = useState("");
   const [redCircleExplanation, setRedCircleExplanation] = useState("");
@@ -94,6 +98,8 @@ const App = () => {
   const [sunInput, setSunInput] = useState("");
   // Garbage state
   const [garbageInput, setGarbageInput] = useState("");
+  // NamePrompt state
+  const [userName, setUserName] = useState("");
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -105,11 +111,12 @@ const App = () => {
   useEffect(() => {
     const id = findOrDefaultLS("id", null, true);
     if (!id) {
-      addUser(null).then(({ data }) => localStorage.setItem("id", data));
+      if (!isNamePromptShown)
+        addUser(userName).then(({ data }) => localStorage.setItem("id", data));
     } else {
       updateUser();
     }
-  }, [screenIndex]);
+  }, [screenIndex, isNamePromptShown]);
 
   const updateUser = () => {
     const id = findOrDefaultLS("id", null, true);
@@ -255,6 +262,13 @@ const App = () => {
 
   return (
     <StyledMain width={width} height={height} animation={animation}>
+      {isNamePromptShown && (
+        <NamePrompt
+          setIsNamePromptShown={setIsNamePromptShown}
+          userName={userName}
+          setUserName={setUserName}
+        />
+      )}
       {screensArray[screenIndex]}
     </StyledMain>
   );

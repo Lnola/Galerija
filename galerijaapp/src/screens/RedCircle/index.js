@@ -7,13 +7,13 @@ import styled, { css } from "styled-components";
 
 const imagesCss = css`
   img:first-of-type {
-    margin-bottom: 20%;
+    margin-bottom: 15%;
   }
 `;
 
 const textCss = css`
   width: 40%;
-  font-size: 28px;
+  font-size: 160%;
 
   article:first-of-type {
     margin-bottom: 20px;
@@ -46,12 +46,22 @@ const RedCircle = ({
       justifyContent="space-around"
       alignItems="center"
     >
-      <FlexSection direction="column" css={imagesCss}>
+      <FlexSection
+        height="95%"
+        direction="column"
+        justifyContent="center"
+        css={imagesCss}
+      >
         <img src={RedPeristilImg} alt="" />
         <img src={RedCirclePeristilImg} alt="" />
       </FlexSection>
 
-      <FlexSection direction="column" css={textCss}>
+      <FlexSection
+        height="95%"
+        direction="column"
+        justifyContent="center"
+        css={textCss}
+      >
         <article>
           <p>Sigurno prepoznaješ ovo mjesto.</p>
           <ColoredTextSpan color={color} isBold={true}>

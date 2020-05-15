@@ -43,8 +43,8 @@ const Peristil = ({
           <Arrow src={OrangeArrowDownImg} alt="orange arrow down" />
         )}
         <Canvas
-          width="1000"
-          height="582.5"
+          width={`${window.innerHeight / 0.85}`}
+          height="67%"
           backgroundImage={PeristilImg}
           setIsCanvasClicked={setIsCanvasClicked}
           canvasSrc={canvasSrc}

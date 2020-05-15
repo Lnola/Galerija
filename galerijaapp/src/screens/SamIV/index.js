@@ -5,7 +5,7 @@ import Flex, { FlexSection } from "../../components/styled/Flex";
 import Canvas from "../../components/common/Canvas";
 
 const StyledImage = styled.img`
-  ${({ height }) => height && `height: ${height};`}
+  ${({ width }) => width && `width: ${width};`}
 `;
 
 const CanvasWrapper = styled.span`
@@ -22,12 +22,12 @@ const SamIV = ({ canvasSrc, updateUser, SamIvImg, SamIvTextImg }) => {
     >
       <StyledImage src={SamIvImg} alt="SamIV" height="75%" />
 
-      <Flex direction="column">
-        <StyledImage src={SamIvTextImg} alt="SamIV" height="300px" />
+      <Flex direction="column" alignItems="center">
+        <StyledImage src={SamIvTextImg} alt="SamIV" width="80%" />
         <CanvasWrapper>
           <Canvas
-            width="450"
-            height="350"
+            width={`${window.innerHeight / 2}`}
+            height="38%"
             canvasSrc={canvasSrc}
             updateUser={updateUser}
             parent="samIV"

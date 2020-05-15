@@ -10,16 +10,12 @@
 
 .selfportrait-figure {
   margin-left: 50px;
-}
-
-.canvas-figure {
-  position: relative;
-  left: -50px;
+  margin-right: 20px;
 }
 
 .canvas-figure > figcaption {
-  font-size: 180%;
+  font-size: 160%;
   text-shadow: 0px 0px 0.7px #000;
-  margin-left: -150px;
+  margin-left: -25%;
   margin-bottom: 20px;
 }

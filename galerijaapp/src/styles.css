@@ -55,7 +55,7 @@ canvas {
 .brush-width {
   width: 52px;
   height: 30px;
-  font-size: 30px;
+  font-size: 170%;
   animation: easeIn 0.75s;
 }
 

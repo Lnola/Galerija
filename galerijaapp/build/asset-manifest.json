@@ -1,23 +1,37 @@
 {
   "files": {
-    "main.css": "/Galerija/static/css/main.c1c01b48.chunk.css",
-    "main.js": "/Galerija/static/js/main.f79b3ed1.chunk.js",
-    "main.js.map": "/Galerija/static/js/main.f79b3ed1.chunk.js.map",
+    "main.css": "/Galerija/static/css/main.9be9789d.chunk.css",
+    "main.js": "/Galerija/static/js/main.6380ef93.chunk.js",
+    "main.js.map": "/Galerija/static/js/main.6380ef93.chunk.js.map",
     "runtime-main.js": "/Galerija/static/js/runtime-main.e91e8367.js",
     "runtime-main.js.map": "/Galerija/static/js/runtime-main.e91e8367.js.map",
-    "static/js/2.a6086c47.chunk.js": "/Galerija/static/js/2.a6086c47.chunk.js",
-    "static/js/2.a6086c47.chunk.js.map": "/Galerija/static/js/2.a6086c47.chunk.js.map",
+    "static/js/2.da780e35.chunk.js": "/Galerija/static/js/2.da780e35.chunk.js",
+    "static/js/2.da780e35.chunk.js.map": "/Galerija/static/js/2.da780e35.chunk.js.map",
     "index.html": "/Galerija/index.html",
-    "precache-manifest.85aec112b4162ab4df60d9eb3ee2d1a6.js": "/Galerija/precache-manifest.85aec112b4162ab4df60d9eb3ee2d1a6.js",
+    "precache-manifest.cca0f165198fa271033acab3b5965805.js": "/Galerija/precache-manifest.cca0f165198fa271033acab3b5965805.js",
     "service-worker.js": "/Galerija/service-worker.js",
-    "static/css/main.c1c01b48.chunk.css.map": "/Galerija/static/css/main.c1c01b48.chunk.css.map",
-    "static/js/2.a6086c47.chunk.js.LICENSE.txt": "/Galerija/static/js/2.a6086c47.chunk.js.LICENSE.txt",
-    "static/media/styles.css": "/Galerija/static/media/peristil.d6d52a98.jpg"
+    "static/css/main.9be9789d.chunk.css.map": "/Galerija/static/css/main.9be9789d.chunk.css.map",
+    "static/js/2.da780e35.chunk.js.LICENSE.txt": "/Galerija/static/js/2.da780e35.chunk.js.LICENSE.txt",
+    "static/media/fonts.css": "/Galerija/static/media/Calibri5.a78cfad3.ttf",
+    "static/media/artist.png": "/Galerija/static/media/artist.87e1cbce.png",
+    "static/media/dancing.jpg": "/Galerija/static/media/dancing.d187df81.jpg",
+    "static/media/expressionism.png": "/Galerija/static/media/expressionism.3f6d8632.png",
+    "static/media/garbage.png": "/Galerija/static/media/garbage.01e8e123.png",
+    "static/media/peristil.jpg": "/Galerija/static/media/peristil.d6d52a98.jpg",
+    "static/media/redArrow.png": "/Galerija/static/media/redArrow.25b4c1b5.png",
+    "static/media/redCirclePeristil.png": "/Galerija/static/media/redCirclePeristil.229a316d.png",
+    "static/media/redPeristil.jpg": "/Galerija/static/media/redPeristil.88d1bba5.jpg",
+    "static/media/samIv.jpg": "/Galerija/static/media/samIv.b253d216.jpg",
+    "static/media/samIvText.png": "/Galerija/static/media/samIvText.a9c63e88.png",
+    "static/media/selfportrait.png": "/Galerija/static/media/selfportrait.e70a7b7d.png",
+    "static/media/sun.png": "/Galerija/static/media/sun.f279883c.png",
+    "static/media/welcome.png": "/Galerija/static/media/welcome.e2b6c7a3.png",
+    "static/media/zarptica.jpg": "/Galerija/static/media/zarptica.8384f4af.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.e91e8367.js",
-    "static/js/2.a6086c47.chunk.js",
-    "static/css/main.c1c01b48.chunk.css",
-    "static/js/main.f79b3ed1.chunk.js"
+    "static/js/2.da780e35.chunk.js",
+    "static/css/main.9be9789d.chunk.css",
+    "static/js/main.6380ef93.chunk.js"
   ]
 }

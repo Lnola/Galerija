@@ -29,6 +29,11 @@ const ColorSpan = styled.span`
     backgroundColor && `background-color: ${backgroundColor};`}
 `;
 
+// const StyledSpan = styled.span`
+//   position: absolut;
+//   bottom: -200px;
+// `;
+
 const Canvas = ({
   width,
   height,
@@ -153,7 +158,7 @@ const Canvas = ({
                 setColor("#000");
               }}
             />
-            <span onClick={clearCanvas}>Izbriši</span>
+            {/* <StyledSpan onClick={clearCanvas}>Izbriši</StyledSpan> */}
           </FlexSection>
         )}
       </FlexSection>

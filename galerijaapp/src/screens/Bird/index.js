@@ -24,16 +24,16 @@ const Bird = ({ wcanvasSrc, wocanvasSrc, updateUser, ZarPticaImg }) => {
 
       <Flex justifyContent="space-around" margin="5% 0 0 0">
         <Canvas
-          width="500"
-          height="523"
+          width={`${window.innerHeight / 1.78}`}
+          height="59%"
           backgroundImage={ZarPticaImg}
           canvasSrc={wcanvasSrc}
           updateUser={updateUser}
           parent="wbird"
         />
         <Canvas
-          width="500"
-          height="523"
+          width={`${window.innerHeight / 1.78}`}
+          height="59%"
           canvasId={1}
           canvasSrc={wocanvasSrc}
           updateUser={updateUser}
