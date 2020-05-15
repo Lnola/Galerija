@@ -12,10 +12,14 @@ const StyledImage = styled.img`
 `;
 
 const Text = styled.span`
-  font-size: 28px;
+  font-size: 160%;
   text-shadow: 0px 0px 0.6px #000;
   margin-top: -5%;
   margin-left: -21%;
+
+  @media screen and (max-height: 750px) {
+    font-size: 120%;
+  }
 `;
 
 const Garbage = ({ garbageInput, setGarbageInput, GarbageImg }) => {

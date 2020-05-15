@@ -24,6 +24,11 @@ const ColorCircle = styled.span`
     max-width: ${window.innerHeight / 4.5}px;
     font-size: 80%;
   }
+
+  @media screen and (max-height: 750px) {
+    font-size: 120%;
+    box-shadow: -5px 0 20px -10px rgba(0, 0, 0, 0.75);
+  }
 `;
 
 const Heading = styled.p`
@@ -33,6 +38,10 @@ const Heading = styled.p`
   flex-basis: 100%;
   font-size: 270%;
   text-align: center;
+
+  @media screen and (max-height: 750px) {
+    font-size: 200%;
+  }
 `;
 
 const Start = ({ canvasSrc, updateUser, RedArrowImg }) => {

@@ -18,6 +18,10 @@ const textCss = css`
   article:first-of-type {
     margin-bottom: 20px;
   }
+
+  @media screen and (max-height: 750px) {
+    font-size: 110%;
+  }
 `;
 
 const Textarea = styled.textarea`
@@ -27,7 +31,11 @@ const Textarea = styled.textarea`
   padding: 5px;
   box-sizing: border-box;
   margin-top: 10px;
-  font-size: 22px;
+  font-size: 120%;
+`;
+
+const StyledImage = styled.img`
+  height: 40%;
 `;
 
 const RedCircle = ({
@@ -52,8 +60,8 @@ const RedCircle = ({
         justifyContent="center"
         css={imagesCss}
       >
-        <img src={RedPeristilImg} alt="" />
-        <img src={RedCirclePeristilImg} alt="" />
+        <StyledImage src={RedPeristilImg} alt="" />
+        <StyledImage src={RedCirclePeristilImg} alt="" />
       </FlexSection>
 
       <FlexSection
@@ -68,7 +76,7 @@ const RedCircle = ({
             Kako se zove?
           </ColoredTextSpan>
           <LineInput
-            fontSize="28px"
+            fontSize={window.innerHeight < 750 ? "110%" : "160%"}
             width="145px"
             margin="0 0 0 10px"
             type="text"

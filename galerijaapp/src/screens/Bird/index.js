@@ -6,7 +6,11 @@ import { css } from "styled-components";
 import Canvas from "../../components/common/Canvas";
 
 const SectionCss = css`
-  font-size: 28px;
+  font-size: 160%;
+
+  @media screen and (max-height: 750px) {
+    font-size: 130%;
+  }
 `;
 
 const Bird = ({ wcanvasSrc, wocanvasSrc, updateUser, ZarPticaImg }) => {

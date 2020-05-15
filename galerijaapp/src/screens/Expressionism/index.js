@@ -15,6 +15,7 @@ const Textarea = styled.textarea`
   border: 0;
   border-bottom: 2px solid #000;
   width: 100%;
+  overflow: hidden;
 `;
 
 const TextareaWrapper = styled.div`
@@ -44,9 +45,13 @@ const TextareaWrapper = styled.div`
 `;
 
 const TextWrapper = styled.span`
-  font-size: 28px;
+  font-size: 160%;
   text-shadow: 0px 0px 0.6px #000;
   margin-bottom: 30px;
+
+  @media screen and (max-height: 750px) {
+    font-size: 120%;
+  }
 `;
 
 const Expressionism = ({

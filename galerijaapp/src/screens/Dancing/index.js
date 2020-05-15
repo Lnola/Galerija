@@ -6,9 +6,13 @@ import Canvas from "../../components/common/Canvas";
 import ColoredText from "../../components/styled/ColoredText";
 
 const Text = styled.span`
-  font-size: 28px;
+  font-size: 160%;
   width: 25%;
   text-shadow: 0px 0px 0.6px #000;
+
+  @media screen and (max-height: 750px) {
+    font-size: 120%;
+  }
 `;
 
 const Dancing = ({ canvasSrc, updateUser, DancingImg }) => {
@@ -19,7 +23,7 @@ const Dancing = ({ canvasSrc, updateUser, DancingImg }) => {
       alignItems="center"
     >
       <Canvas
-        width="50%"
+        width={`${window.innerHeight / 1.4}`}
         height="90%"
         backgroundImage={DancingImg}
         canvasSrc={canvasSrc}

@@ -29,7 +29,7 @@ const Selfportrait = ({ canvasSrc, updateUser, SelfportraitImg }) => {
           </ColoredText>
         </figcaption>
         <Canvas
-          width="350"
+          width={window.innerHeight < 750 ? "250" : "350"}
           height="65%"
           canvasSrc={canvasSrc}
           updateUser={updateUser}

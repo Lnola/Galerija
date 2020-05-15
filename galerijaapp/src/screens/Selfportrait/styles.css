@@ -19,3 +19,9 @@
   margin-left: -25%;
   margin-bottom: 20px;
 }
+
+@media screen and (max-height: 750px) {
+  .canvas-figure > figcaption {
+    font-size: 120%;
+  }
+}

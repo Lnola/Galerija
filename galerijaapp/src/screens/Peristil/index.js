@@ -12,7 +12,7 @@ const Arrow = styled.img`
 `;
 
 const Text = styled.p`
-  font-size: 28px;
+  font-size: 160%;
   margin-bottom: -10%;
 `;
 
